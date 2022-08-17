@@ -5,20 +5,20 @@
 class Gosandbox < Formula
   desc ""
   homepage "https://github.com/josephedward/gosandbox"
-  version "0.1.2"
+  version "0.1.3"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/josephedward/gosandbox/releases/download/v0.1.2/gosandbox_0.1.2_Darwin_x86_64.tar.gz"
-      sha256 "bb3cafbc4f6a480207c3c3b2da8734f9851ee3295e0c452717435f6244c066b0"
+    if Hardware::CPU.arm?
+      url "https://github.com/josephedward/gosandbox/releases/download/v0.1.3/gosandbox_0.1.3_Darwin_arm64.tar.gz"
+      sha256 "f7b643bcf50d2372ef6c87ed314673a7ee75c02522ca7e1ce53f1b6ef6b848e9"
 
       def install
         bin.install "gosandbox"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/josephedward/gosandbox/releases/download/v0.1.2/gosandbox_0.1.2_Darwin_arm64.tar.gz"
-      sha256 "6f04a246d1eef33ff4ca6ac75585ef4bd2d1210e154e0511e7156e4a85d3e56a"
+    if Hardware::CPU.intel?
+      url "https://github.com/josephedward/gosandbox/releases/download/v0.1.3/gosandbox_0.1.3_Darwin_x86_64.tar.gz"
+      sha256 "a52c6e784db336d704a5ce45c2d270fd180e67bf04714b1091671d0e3bdc6d05"
 
       def install
         bin.install "gosandbox"
@@ -27,17 +27,17 @@ class Gosandbox < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/josephedward/gosandbox/releases/download/v0.1.2/gosandbox_0.1.2_Linux_x86_64.tar.gz"
-      sha256 "94fdda2095522af4f1410680af0863ab52ce99fd4ac924204baf777eb9150cac"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/josephedward/gosandbox/releases/download/v0.1.3/gosandbox_0.1.3_Linux_arm64.tar.gz"
+      sha256 "dbbda7325c0e7d50771718b692c4e0da389b46e60743a4e9e0137308a2d5ca56"
 
       def install
         bin.install "gosandbox"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/josephedward/gosandbox/releases/download/v0.1.2/gosandbox_0.1.2_Linux_arm64.tar.gz"
-      sha256 "8f1efd4aade9139578ab1668a7c1ad9ccafee461c60ef3492e8e17463100147e"
+    if Hardware::CPU.intel?
+      url "https://github.com/josephedward/gosandbox/releases/download/v0.1.3/gosandbox_0.1.3_Linux_x86_64.tar.gz"
+      sha256 "ab7991b69c932911b10a97eaf25cbac914527faf126250500a99871d79ef6164"
 
       def install
         bin.install "gosandbox"
